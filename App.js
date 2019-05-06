@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   StyleSheet,
   Text,
@@ -8,7 +8,7 @@ import {
   Dimensions,
   Platform,
   ScrollView
-} from 'react-native';
+} from "react-native";
 import ToDo from "./ToDo";
 
 const { height, width } = Dimensions.get("window");
@@ -24,20 +24,19 @@ export default class App extends React.Component {
         <StatusBar barStyle="light-content" />
         <Text style={styles.title}>Kawai To Do</Text>
         <View style={styles.card}>
-          <TextInput 
-          style={styles.input} 
-          placeholder={"New To Do"} 
-          value={newToDo} 
-          onChangeText={this._controlNewToDo}
-          placeholderTextColor={"#999"}
-          returnKeyType={"done"}
-          autoCorrect={false} 
+          <TextInput
+            style={styles.input}
+            placeholder={"New To Do"}
+            value={newToDo}
+            onChangeText={this._controlNewToDo}
+            placeholderTextColor={"#999"}
+            returnKeyType={"done"}
+            autoCorrect={false}
           />
           <ScrollView contentContainerStyle={styles.toDos}>
             <ToDo />
           </ScrollView>
         </View>
-
       </View>
     );
   }
@@ -46,14 +45,14 @@ export default class App extends React.Component {
     this.setState({
       newToDo: text
     });
-  }
+  };
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F23657',
-    alignItems: 'center',
+    backgroundColor: "#F23657",
+    alignItems: "center"
   },
   title: {
     color: "white",
@@ -91,7 +90,5 @@ const styles = StyleSheet.create({
   },
   toDos: {
     alignItems: "center"
-
   }
-
 });
